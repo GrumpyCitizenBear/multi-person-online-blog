@@ -1,6 +1,6 @@
 package hello.entity;
 
-import net.minidev.json.annotate.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.time.Instant;
 
@@ -13,13 +13,13 @@ public class User{
     Instant createdAt;
     Instant updatedAt;
 
-    public User(String username, String encryptedPassword) {
+    public User(Integer id,String username, String encryptedPassword) {
         this.id = id;
         this.username = username;
         this.encryptedPassword = encryptedPassword;
-        this.avatar = avatar;
-        this.createdAt = createdAt;
-        this.updatedAt = updatedAt;
+        this.avatar = "";
+        this.createdAt = Instant.now();
+        this.updatedAt = Instant.now();
     }
 
     public Integer getId() {

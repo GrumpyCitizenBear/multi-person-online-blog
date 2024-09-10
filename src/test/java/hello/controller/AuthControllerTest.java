@@ -1,6 +1,7 @@
 package hello.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import hello.service.AuthService;
 import hello.service.UserService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -39,11 +40,13 @@ class AuthControllerTest {
     private AuthenticationManager authenticationManager;
 
     private BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
+    @Mock
+    private AuthService authService;
 
     //调用测试前执行
     @BeforeEach
     void setUp(){
-        mockMvc = MockMvcBuilders.standaloneSetup(new AuthController(authenticationManager, userService)).build();
+        mockMvc = MockMvcBuilders.standaloneSetup(new AuthController(authenticationManager, userService,authService)).build();
     }
 
     @Test

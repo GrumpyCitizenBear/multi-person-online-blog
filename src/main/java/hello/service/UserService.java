@@ -1,7 +1,7 @@
 package hello.service;
 
 import hello.entity.User;
-import hello.mapper.UserMapper;
+import hello.dao.UserMapper;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -13,18 +13,17 @@ import java.util.Collections;
 
 @Service
 public class UserService implements UserDetailsService {
-    private BCryptPasswordEncoder bCryptPasswordEncoder;
-    private UserMapper userMapper;
+    private final BCryptPasswordEncoder bCryptPasswordEncoder;
+    private final UserMapper userMapper;
 
     @Inject
     public UserService(BCryptPasswordEncoder bCryptPasswordEncoder, UserMapper userMapper) {
         this.bCryptPasswordEncoder = bCryptPasswordEncoder;
         this.userMapper = userMapper;
-//        save("user","password");
     }
+
     public void save(String username, String password){
         userMapper.save(username,bCryptPasswordEncoder.encode(password));
-//        users.put(username, new User(1,username,bCryptPasswordEncoder.encode(password)));
     }
     public User getUserByUsername(String username){
         return userMapper.findUserByUsername(username);
@@ -36,6 +35,7 @@ public class UserService implements UserDetailsService {
             throw new UsernameNotFoundException(username+"不存在！");
         }
 
-        return new org.springframework.security.core.userdetails.User(username,user.getEncryptedPassword(), Collections.EMPTY_LIST);
+        return new org.springframework.security.core.userdetails.User(
+                username,user.getEncryptedPassword(), Collections.emptyList());
     }
 }
