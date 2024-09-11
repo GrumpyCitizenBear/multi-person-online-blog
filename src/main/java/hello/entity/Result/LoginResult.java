@@ -14,7 +14,7 @@ public class LoginResult extends Result {
     public boolean isLogin() {
         return isLogin;
     }
-    public void setLogin(boolean login) {
-        isLogin = login;
+    public void setLogin(boolean islogin) {
+        isLogin = islogin;
     }
 }

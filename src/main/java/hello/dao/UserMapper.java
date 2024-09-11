@@ -1,7 +1,6 @@
 package hello.dao;
 
 import hello.entity.User;
-import hello.entity.UserWithoutTime;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;

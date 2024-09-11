@@ -5,14 +5,14 @@ import hello.entity.Blogs;
 import java.util.List;
 
 public class BlogListResult extends MsgResult {
-    private final List<Blogs> blogs;
+    private final List<Blogs> data;
     private int total;
     private int page;
     private int totalPage;
 
-    public BlogListResult(ResultStatus status, String msg,int total, int page, int totalPage, List<Blogs> blogs) {
+    public BlogListResult(ResultStatus status, String msg,int total, int page, int totalPage, List<Blogs> data) {
         super(status,msg);
-        this.blogs = blogs;
+        this.data = data;
         this.total = total;
         this.page = page;
         this.totalPage = totalPage;
@@ -22,8 +22,8 @@ public class BlogListResult extends MsgResult {
         return new BlogListResult(ResultStatus.OK, "获取成功", total, page, totalPage,data);
     }
 
-    public List<Blogs> getBlogs() {
-        return blogs;
+    public List<Blogs> getData() {
+        return data;
     }
 
     public int getTotal() {
