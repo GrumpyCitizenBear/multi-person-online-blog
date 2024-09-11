@@ -10,7 +10,7 @@ public class BlogListResult extends MsgResult {
     private int page;
     private int totalPage;
 
-    public BlogListResult(ResultStatus status, String msg,int total, int page, int totalPage, List<Blogs> data) {
+    public BlogListResult(String status, String msg,int total, int page, int totalPage, List<Blogs> data) {
         super(status,msg);
         this.data = data;
         this.total = total;
@@ -19,7 +19,7 @@ public class BlogListResult extends MsgResult {
     }
 
     public static BlogListResult success(List<Blogs> data, int total, int page, int totalPage) {
-        return new BlogListResult(ResultStatus.OK, "获取成功", total, page, totalPage,data);
+        return new BlogListResult("ok", "获取成功", total, page, totalPage,data);
     }
 
     public List<Blogs> getData() {

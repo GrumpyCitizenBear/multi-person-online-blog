@@ -1,20 +1,21 @@
 package hello.entity.Result;
 
 public class LoginResult extends Result {
-    boolean isLogin;
-    protected LoginResult(ResultStatus status,boolean isLogin) {
+    boolean islogin;
+    protected LoginResult(String status,boolean isLogin) {
         super(status);
-        this.isLogin = isLogin;
+        this.islogin = isLogin;
     }
 
     public static LoginResult success(boolean isLogin) {
-        return new LoginResult(ResultStatus.OK,isLogin);
+        return new LoginResult("ok",isLogin);
     }
 
-    public boolean isLogin() {
-        return isLogin;
+    public boolean isIslogin() {
+        return islogin;
     }
-    public void setLogin(boolean islogin) {
-        isLogin = islogin;
+
+    public void setIslogin(boolean islogin) {
+        this.islogin = islogin;
     }
 }

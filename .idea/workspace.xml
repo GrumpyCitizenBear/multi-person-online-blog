@@ -5,14 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="068a45a5-f0ac-4a96-96f6-7cb80f8f7cbf" name="更改" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/configuration/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/configuration/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/dao/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/dao/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/entity/Result/BlogListResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/entity/Result/BlogListResult.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hello/entity/Result/LoginResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/entity/Result/LoginResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/static/js/app.cbb25848b2ab6017d8f7.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/static/js/app.cbb25848b2ab6017d8f7.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/static/js/app.cbb25848b2ab6017d8f7.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/static/js/app.cbb25848b2ab6017d8f7.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hello/entity/Result/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/entity/Result/Result.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,8 +51,8 @@
     "project.structure.last.edited": "模块",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.keymap",
-    "应用程序.Application.executor": "Debug"
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "应用程序.Application.executor": "Run"
   }
 }]]></component>
   <component name="RunManager" selected="应用程序.Application">
@@ -104,15 +99,6 @@
     <servers />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/hello/controller/AuthController.java</url>
-          <line>89</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="org.springframework.security.web.servletapi.HttpServlet3RequestFactory$Servlet3SecurityContextHolderAwareRequestWrapper" memberName="request" />
