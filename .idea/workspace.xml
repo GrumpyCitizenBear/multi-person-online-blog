@@ -5,40 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="068a45a5-f0ac-4a96-96f6-7cb80f8f7cbf" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/hello/controller/BlogController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/hello/dao/BlogDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/hello/entity/Blog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/hello/entity/BlogListResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/hello/entity/BlogResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/hello/entity/LoginResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/hello/service/AuthService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/hello/service/BlogService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/hello/utils/AssertUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V1__Create_User.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V2__Create_Blog.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/db/mybatis/mappers/BlogMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/db/mybatis/mybatis-config.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/hello/integration/IntegrationTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/hello/service/BlogServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/test.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/multi-person-online-blog.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/configuration/JavaCongiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/configuration/JavaCongiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/configuration/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/configuration/WebSecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hello/entity/BlogUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hello/entity/Blogs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hello/entity/Result/BlogMsgResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hello/entity/Result/DataLoginResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hello/entity/Result/DataMsgResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hello/entity/Result/LoginResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hello/entity/Result/MsgResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hello/entity/UserWithoutTime.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hello/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/entity/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/entity/Result.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hello/controller/BlogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/controller/BlogController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hello/dao/BlogDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/dao/BlogDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hello/dao/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/dao/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hello/entity/Blog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/entity/Blog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hello/entity/BlogListResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/entity/Result/BlogListResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hello/entity/BlogResult.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hello/entity/LoginResult.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hello/entity/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/entity/Result/Result.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hello/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/dao/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/service/OrderService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hello/service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/service/AuthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hello/service/BlogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/service/BlogService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hello/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/hello/controller/AuthControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/hello/controller/AuthControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/hello/service/UserServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/hello/service/UserServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db/mybatis/mappers/BlogMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/mybatis/mappers/BlogMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/hello/service/BlogServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/hello/service/BlogServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,22 +57,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "JAR 应用程序.opensnn-1.0-SNAPSHOT.jar.executor": "Run",
-    "Maven.opensnn [compile].executor": "Run",
-    "Maven.opensnn [package].executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "project.structure.last.edited": "模块",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.keymap",
-    "应用程序.Application.executor": "Run"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JAR 应用程序.opensnn-1.0-SNAPSHOT.jar.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.opensnn [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.opensnn [package].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;应用程序.Application.executor&quot;: &quot;Run&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="应用程序.Application">
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="hello.Application" />
@@ -125,5 +115,13 @@
       <updated>1725866875531</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="org.springframework.security.web.servletapi.HttpServlet3RequestFactory$Servlet3SecurityContextHolderAwareRequestWrapper" memberName="request" />
+        <PinnedItemInfo parentTag="org.springframework.security.web.servletapi.HttpServlet3RequestFactory$Servlet3SecurityContextHolderAwareRequestWrapper" memberName="rolePrefix" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>

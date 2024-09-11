@@ -1,9 +1,7 @@
 package hello.controller;
 
-import hello.entity.Blog;
-import hello.entity.BlogListResult;
-import hello.entity.BlogResult;
-import hello.entity.User;
+import hello.entity.*;
+import hello.entity.Result.MsgResult;
 import hello.service.AuthService;
 import hello.service.BlogService;
 import hello.utils.AssertUtils;
@@ -27,7 +25,7 @@ public class BlogController {
 
     @GetMapping("/blog")
     @ResponseBody
-    public BlogListResult getBlogs(@RequestParam("page") Integer page, @RequestParam(value="userId",required = false) Integer userId){
+    public MsgResult getBlogs(@RequestParam("page") Integer page, @RequestParam(value="userId",required = false) Integer userId){
         if(page==null||page<0){
             page=1;
         }
@@ -37,43 +35,43 @@ public class BlogController {
 
     @GetMapping("/blog/{blogId}")
     @ResponseBody
-    public BlogResult getBlog(@PathVariable("blogid") int blogId){
+    public MsgResult getBlog(@PathVariable("blogId") int blogId){
         return blogService.getBlogById(blogId);
     }
 
     @PostMapping("/blog")
     @ResponseBody
-    public BlogResult newBlog(@RequestBody Map<String,String> param){
+    public MsgResult newBlog(@RequestBody Map<String,String> param){
         try{
-            return authService.getCurrentUser().map(user -> blogService.insertBlog(fromParam(param,user))).orElse(BlogResult.failure("登录后才能操作"));
+            return authService.getCurrentBlogUser().map(user -> blogService.insertBlog(fromParam(param,user))).orElse(MsgResult.failure("登录后才能操作"));
         }catch (Exception e){
-            return BlogResult.failure(e);
+            return MsgResult.failure(e);
         }
     }
 
     @PatchMapping("/blog/{blogId}")
     @ResponseBody
-    public BlogResult updateBlog(@PathVariable("blogId") int blogId,@RequestBody Map<String,String> param){
+    public MsgResult updateBlog(@PathVariable("blogId") int blogId,@RequestBody Map<String,String> param){
         try{
-            return authService.getCurrentUser().map(user -> blogService.updateBlog(blogId, fromParam(param,user))).orElse(BlogResult.failure("登录后才能操作"));
+            return authService.getCurrentBlogUser().map(user -> blogService.updateBlog(blogId, fromParam(param,user))).orElse(MsgResult.failure("登录后才能操作"));
         }catch (Exception e){
-            return BlogResult.failure(e);
+            return MsgResult.failure(e);
         }
 
     }
 
     @DeleteMapping("/blog/{blogId}")
     @ResponseBody
-    public BlogResult deleteBlog(@PathVariable("blogId") int blogId){
+    public MsgResult deleteBlog(@PathVariable("blogId") int blogId){
         try{
-            return authService.getCurrentUser().map(user -> blogService.deleteBlog(blogId,user)).orElse(BlogResult.failure("登录后才能操作"));
+            return authService.getCurrentUser().map(user -> blogService.deleteBlog(blogId,user)).orElse(MsgResult.failure("登录后才能操作"));
         }catch (Exception e){
-            return BlogResult.failure(e);
+            return MsgResult.failure(e);
         }
 
     }
 
-    private Blog fromParam(Map<String,String> params, User user) {
+    private Blog fromParam(Map<String,String> params, BlogUser user) {
         Blog blog = new Blog();
         String title = params.get("title");
         String content = params.get("content");

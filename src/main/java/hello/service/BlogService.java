@@ -1,10 +1,10 @@
 package hello.service;
 
 import hello.dao.BlogDao;
-import hello.entity.Blog;
-import hello.entity.BlogListResult;
-import hello.entity.BlogResult;
-import hello.entity.User;
+import hello.entity.*;
+import hello.entity.Result.BlogListResult;
+import hello.entity.Result.BlogMsgResult;
+import hello.entity.Result.MsgResult;
 import org.springframework.stereotype.Service;
 
 import javax.inject.Inject;
@@ -19,9 +19,9 @@ public class BlogService {
         this.blogDao = blogDao;
     }
 
-    public BlogListResult getBlogs(Integer page, Integer pageSize, Integer userId){
+    public MsgResult getBlogs(Integer page, Integer pageSize, Integer userId){
         try {
-            List<Blog> blogs = blogDao.getBlogs(page, pageSize, userId);
+            List<Blogs> blogs = blogDao.getBlogs(page, pageSize, userId);
 
             int count = blogDao.count(userId);
 
@@ -29,56 +29,56 @@ public class BlogService {
 
             return BlogListResult.success(blogs, count, page, pageCount);
         }catch (Exception e){
-            return BlogListResult.failure("系统异常");
+            return MsgResult.failure(e);
         }
     }
 
-    public BlogResult getBlogById(int blogId) {
+    public MsgResult getBlogById(int blogId) {
         try{
-            return BlogResult.success("获取成功",blogDao.selectBlogById(blogId));
+            return BlogMsgResult.success("获取成功",blogDao.selectBlogById(blogId));
         }catch (Exception e){
-            return BlogResult.failure(e);
+            return MsgResult.failure(e);
         }
     }
 
 
-    public BlogResult updateBlog(int blogId,Blog targetBlog) {
+    public MsgResult updateBlog(int blogId,Blog targetBlog) {
         Blog blogInDb = blogDao.selectBlogById(blogId);
         if(blogInDb == null){
-            return BlogResult.failure("博客不存在");
+            return MsgResult.failure("博客不存在");
         }
         if(!Objects.equals(blogId,blogInDb.getId())){
-            return BlogResult.failure("不能修改别人的博客");
+            return MsgResult.failure("不能修改别人的博客");
         }
         try{
             targetBlog.setId(blogId);
-            return BlogResult.success("修改成功",blogDao.updateBlog(targetBlog));
+            return BlogMsgResult.success("修改成功",blogDao.updateBlog(targetBlog));
         }catch (Exception e){
-            return BlogResult.failure(e);
+            return MsgResult.failure(e);
         }
     }
 
-    public BlogResult insertBlog(Blog newBlog) {
+    public MsgResult insertBlog(Blog newBlog) {
         try{
-            return BlogResult.success("创建成功",blogDao.insertBlog(newBlog));
+            return BlogMsgResult.success("创建成功",blogDao.insertBlog(newBlog));
         }catch (Exception e){
-            return BlogResult.failure(e);
+            return MsgResult.failure(e);
         }
     }
 
-    public BlogResult deleteBlog(int blogId, User user) {
+    public MsgResult deleteBlog(int blogId, User user) {
         Blog blogInDb = blogDao.selectBlogById(blogId);
         if(blogInDb == null){
-            return BlogResult.failure("博客不存在");
+            return MsgResult.failure("博客不存在");
         }
         if(!Objects.equals(user.getId(),blogInDb.getUserId())){
-            return BlogResult.failure("不能修改别人的博客");
+            return MsgResult.failure("不能修改别人的博客");
         }
         try{
             blogDao.deleteBlog(blogId);
-            return BlogResult.success("删除成功");
+            return MsgResult.success("删除成功");
         }catch (Exception e){
-            return BlogResult.failure(e);
+            return MsgResult.failure(e);
         }
     }
 }

@@ -4,12 +4,12 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="org.apache.ibatis.submitted.rounding.Mapper">
-    <select id="selectBlog" resultMap="blog">
+    <select id="selectBlog" resultMap="blogs">
         SELECT
         blog.id as blog_id,
         blog.title as blog_title,
         blog.description as blog_description,
-        blog.content as blog_conent,
+<!--        blog.content as blog_conent,-->
         blog.updated_at as blog_updated_at,
         blog.created_at as blog_created_at,
         user.id as user_id,
@@ -68,7 +68,6 @@
         delete * from blog
         where id=#{id}
     </delete>
-
     <resultMap id="blog" type="hello.entity.Blog">
         <id property="id" column="blog_id"/>
         <result property="title" column="blog_title"/>
@@ -76,7 +75,22 @@
         <result property="content" column="blog_content"/>
         <result property="updatedAt" column="blog_updated_at"/>
         <result property="createdAt" column="blog_created_at"/>
-        <association property="user" javaType="hello.entity.User">
+        <association property="user" javaType="hello.entity.BlogUser">
+            <id property="id" column="user_id"/>
+            <result property="username" column="user_username"/>
+            <result property="avatar" column="user_avatar"/>
+            <result property="updatedAt" column="user_updated_at"/>
+            <result property="createdAt" column="user_created_at"/>
+        </association>
+    </resultMap>
+    <resultMap id="blogs" type="hello.entity.Blogs">
+        <id property="id" column="blog_id"/>
+        <result property="title" column="blog_title"/>
+        <result property="description" column="blog_description"/>
+<!--        <result property="content" column="blog_content"/>-->
+        <result property="updatedAt" column="blog_updated_at"/>
+        <result property="createdAt" column="blog_created_at"/>
+        <association property="user" javaType="hello.entity.BlogUser">
             <id property="id" column="user_id"/>
             <result property="username" column="user_username"/>
             <result property="avatar" column="user_avatar"/>

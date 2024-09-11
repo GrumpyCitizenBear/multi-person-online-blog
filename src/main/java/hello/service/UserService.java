@@ -1,7 +1,9 @@
 package hello.service;
 
+import hello.entity.BlogUser;
 import hello.entity.User;
 import hello.dao.UserMapper;
+import hello.entity.UserWithoutTime;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -28,6 +30,11 @@ public class UserService implements UserDetailsService {
     public User getUserByUsername(String username){
         return userMapper.findUserByUsername(username);
     }
+
+    public BlogUser getUserByBlogUsername(String username){
+        return (BlogUser) userMapper.findUserByUsername(username);
+    }
+
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User user = getUserByUsername(username);

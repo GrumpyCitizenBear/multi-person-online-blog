@@ -1,6 +1,7 @@
 package hello.dao;
 
 import hello.entity.Blog;
+import hello.entity.Blogs;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Service;
 
@@ -18,7 +19,7 @@ public class BlogDao {
         this.sqlSession = sqlSession;
     }
 
-    public List<Blog> getBlogs(Integer page, Integer pageSize, Integer userId){
+    public List<Blogs> getBlogs(Integer page, Integer pageSize, Integer userId){
         Map<String,Object> parameters = asMap(
                 "user_id", userId,
                 "offset", (page - 1) * pageSize,

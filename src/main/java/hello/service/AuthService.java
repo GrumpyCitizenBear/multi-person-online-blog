@@ -1,5 +1,6 @@
 package hello.service;
 
+import hello.entity.BlogUser;
 import hello.entity.User;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -20,5 +21,10 @@ public class AuthService {
     public Optional<User> getCurrentUser(){
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         return Optional.ofNullable(userService.getUserByUsername(authentication==null?null: authentication.getName()));
+    }
+
+    public Optional<BlogUser> getCurrentBlogUser(){
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        return Optional.ofNullable(userService.getUserByBlogUsername(authentication==null?null: authentication.getName()));
     }
 }
